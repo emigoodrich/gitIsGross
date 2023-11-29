@@ -7,6 +7,7 @@ const AddTransaction = () => {
         const initialValue = JSON.parse(rawValue);
         return initialValue || [];
     })
+    const [count, setCount] = useState(0)
     const [amount, setAmount] = useState('')
     const [description, setDescription] = useState('')
     const handleChangeAmount = useCallback((event) => {
@@ -27,12 +28,14 @@ const AddTransaction = () => {
         console.log(list)
         const newList = list.concat({
             amount: amount, 
-            des: description
+            des: description,
+            id: count
         })
         setList(newList)
+        setCount(count + 1)
         setAmount('')
         setDescription('')
-    }, [amount, description, list]);
+    }, [amount, description, count, list]);
 
     useEffect(() => {
         localStorage.setItem('list', JSON.stringify(list));
