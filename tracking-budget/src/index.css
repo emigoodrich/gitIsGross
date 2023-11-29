@@ -4,10 +4,102 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; 
+  background-color: lightblue;
+}
+#amountBox {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  width: 100%;
+  padding: 15px 0;
+  border-radius: 15px;
+  justify-content: space-around;
+}
+.historyItems {
+  background-color: white;
+  padding: 5px 0;
+  border-radius: 15px;
+  width: 100%;
+}
+#historyContainer {
+  width: 100%;
+}
+.App {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: auto;
+  justify-content: space-around;
+  background-color: none;
+}
+.AppSection {
+  background-color: none;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+hr {
+  width: 100%;
+  height: 2px;
+  border: none;
+  background-color: black;
+  margin-left: 0;
+}
+#addTransactionRouteButton {
+  background-color: white;
+  margin: auto;
+  margin-top: 100px;
+  border-radius: 15px;
+  padding: 15px;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 30px;
+}
+.review-list-item {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 1px;
+}
+.review-list-item div {
+  display: flex;
+  flex-direction: row;
+}
+.list-items {
+  background-color: none;
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 10px;
+  font-size: 19px;
+}
+.item-right-side {
+  background-color: none;
+  width: 5%;
+  justify-content: space-between;
+}
+#review-titles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+  width: 90%;
+  margin-bottom: 30px;
+}
+#transaction-main-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 100%;
+}
+#transaction-main-div div{
+  background-color: none;
+  width: 30%;
 }
