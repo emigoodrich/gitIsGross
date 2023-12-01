@@ -1,12 +1,12 @@
-import React//, 
-//{useState, useEffect} 
-from 'react'
+import React, {useEffect, useState} from 'react'
 
 const TotalSum = ({list}) => {
+    const [total, setTotal] = useState(0)
+    useEffect(() => {
+        setTotal(list.reduce((accumulator, currentValue) => accumulator + parseInt(currentValue.amount), 0))
+    }, [list, total])
     return (
-        <div></div>
+        <div>${total}</div>
     )
 }
 export default TotalSum;
-
-//ugh nevermind, just do this after i already have my deleted items

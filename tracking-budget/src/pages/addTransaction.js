@@ -32,9 +32,11 @@ const AddTransaction = () => {
             id: count
         })
         setList(newList)
+        console.log(list)
         setCount(count + 1)
         setAmount('')
         setDescription('')
+        console.log(count)
     }, [amount, description, count, list]);
 
     useEffect(() => {
