@@ -10,7 +10,6 @@ const OutputtingLists = ({ list, deletingListItem }) => {
             </div>
             <div class="item-right-side">
                 <div onClick={() => deletingListItem(item.id)}>x</div>
-                <div id={{index}}>color</div>
             </div>
         </div>
     ))}  

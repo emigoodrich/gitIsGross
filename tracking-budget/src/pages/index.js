@@ -19,7 +19,7 @@ const Home = () => {
       <h1>Budget Tracker</h1>
       <h2>Your Balance:</h2>
       <h2><TotalSum /></h2>
-      <div id="amountBox">
+      <div id="amountBox" >
         <div>
           <h3>INCOME</h3>
           <p>positive nums</p>

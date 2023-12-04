@@ -9,7 +9,7 @@ const TotalSum = () => {
     useEffect(() => {
         const list = contextValue ?? [];
         setTotal(list?.reduce((accumulator, currentValue) => accumulator + parseInt(currentValue.amount), 0))
-    }, [])
+    }, [contextValue])
     return (
         <div>${total}</div>
     )
