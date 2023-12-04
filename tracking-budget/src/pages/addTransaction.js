@@ -11,15 +11,11 @@ const AddTransaction = () => {
     const [amount, setAmount] = useState('')
     const [description, setDescription] = useState('')
     const handleChangeAmount = useCallback((event) => {
-        if (event.target.value === "" || null) {
-            setAmount(event.target.value);
-        } else if (!Number(event.target.value)){
-            
+        if (isNaN(event.target.value)){
             alert('numbers only!')
         } else {
             setAmount(event.target.value)
         }
-        
     }, []);
     function handleChangeDescription(event) {
         setDescription(event.target.value)
@@ -50,20 +46,19 @@ const AddTransaction = () => {
         <div id="transaction-main-div">
             <div>
             <h1>Add Transaction</h1>
-            <div></div>
             <h3>Amount</h3>
-            <div>$</div>
-            <Button>+</Button>
-            <Button>-</Button>
-            <TextField id="outlined-basic" label="Amount" variant="outlined" value={amount} placeholder="Enter Amount..." onChange={handleChangeAmount}/>
+            <TextField id="outlined-basic fullWidth" label="Amount" variant="outlined" value={amount} onChange={handleChangeAmount}/>
             <h3>Description</h3>
-            <TextField id="outlined-basic" label="Description" variant="outlined" value={description} placeholder="Enter Description..." onChange={handleChangeDescription}/>
+            <TextField id="outlined-basic" label="Description" variant="outlined" value={description} onChange={handleChangeDescription}/>
+            <span id="ugh">
+                <div class="decisionButtons">DEPOSIT</div>
+                <div class="decisionButtons">WITHDRAWAL</div>
+            </span>
             <Button onClick={handleAdd}>Submit</Button>
             </div>
             <div>
                 <h2>Current:</h2>
-                <h2><span>$</span>{amountAndDescription}</h2>
-                <h3>Most Recent:</h3>
+                <h2><span>$</span>{amountAndDescription}</h2> 
             </div>
         </div>
     )

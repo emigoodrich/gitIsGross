@@ -19,8 +19,18 @@ body {
 .historyItems {
   background-color: white;
   padding: 5px 0;
+  margin-top: 5px;
   border-radius: 15px;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.historyItems div {
+  background-color: none;
+  width: 50%;
+  text-align: left;
+  margin-left: 5px;
 }
 #historyContainer {
   width: 100%;
@@ -97,9 +107,27 @@ hr {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  height: 100%;
 }
 #transaction-main-div div{
   background-color: none;
-  width: 30%;
+  display: flex;
+  flex-direction: column;
+  background-color: none;
+  margin-right: 40px;
+}
+#ugh {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  height: 100px;
+  background-color: orange;
+  justify-content: space-around;
+}
+.decisionButtons {
+  width: 50%;
+  background-color: white;
+  text-align: center;
+  
+  border-radius: 10px;
 }

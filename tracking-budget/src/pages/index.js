@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom'
 import TotalSum from '../components/totalSum'
-const defaultList = []
+import HistoryList from '../components/historyList'
+import ListContext from '../components/listContext';
+const defaultList = [];
 const Home = () => {
   const [list, setList] = useState(defaultList);
   useEffect(() => {
@@ -10,24 +12,13 @@ const Home = () => {
           setList(list)
       }
   }, []);
-  const displayingFourHistory = () => {
-    console.log('its a me mario')
-    // const modiList = [list[0], list[1], list[2], list[3]]
-    // console.log(modiList)
     return (
-      <div>
-        {list.map((item) => (
-          <div>{JSON.parse(JSON.stringify(item.amount))}</div>
-        ))}
-      </div>
-    )
-  }
-    return (
+      <ListContext.Provider value={list}>
     <div className="App">
       <div class="AppSection">
       <h1>Budget Tracker</h1>
       <h2>Your Balance:</h2>
-      <h2><TotalSum list={list} /></h2>
+      <h2><TotalSum /></h2>
       <div id="amountBox">
         <div>
           <h3>INCOME</h3>
@@ -43,9 +34,10 @@ const Home = () => {
     <div class="AppSection">
       <h2>History</h2>
       <hr></hr>
-      <div id="historyContainer">{displayingFourHistory}</div>
+      <div id="historyContainer"><HistoryList list={list}/></div>
     </div>
   </div>
+  </ListContext.Provider>
     )
 }
 export default Home;

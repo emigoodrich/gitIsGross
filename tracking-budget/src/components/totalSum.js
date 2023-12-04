@@ -1,10 +1,15 @@
-import React, {useEffect, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react';
+import ListContext from './listContext';
 
-const TotalSum = ({list}) => {
+const TotalSum = () => {
     const [total, setTotal] = useState(0)
+
+    const contextValue = useContext(ListContext);
+
     useEffect(() => {
-        setTotal(list.reduce((accumulator, currentValue) => accumulator + parseInt(currentValue.amount), 0))
-    }, [list, total])
+        const list = contextValue ?? [];
+        setTotal(list?.reduce((accumulator, currentValue) => accumulator + parseInt(currentValue.amount), 0))
+    }, [])
     return (
         <div>${total}</div>
     )
