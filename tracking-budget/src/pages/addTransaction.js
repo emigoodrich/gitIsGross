@@ -1,4 +1,4 @@
-import React, {useCallback, useState, useEffect, useMemo} from 'react';
+import React, {useCallback, useState, useEffect, useMemo, useRef} from 'react';
 import {TextField, Button} from '@mui/material'
 
 const AddTransaction = () => {
@@ -12,6 +12,7 @@ const AddTransaction = () => {
         const initialCount = JSON.parse(rawCount)
         return parseInt(initialCount) || 0;
     })
+    const listLength = useRef()
     const [amount, setAmount] = useState('')
     const [description, setDescription] = useState('')
     const [clickedOption, setClickedOption] = useState(false)
@@ -39,6 +40,7 @@ const AddTransaction = () => {
             setAmount('')
             setDescription('')
             console.log(count)
+            alert('cool! you now have ' + (listLength.current +1) + ' item(s)!')
         } else {
             alert('choose to deposit or withdraw!!')
         }
@@ -61,7 +63,9 @@ const AddTransaction = () => {
         setAmount(Math.abs(amount))
         setClickedOption(true)
     }
-    
+    useEffect(() => {
+        listLength.current = list.length;
+    })
     return (
         <div id="transaction-main-div">
             <div>
