@@ -13,6 +13,7 @@ const AddTransaction = () => {
         return parseInt(initialCount) || 0;
     })
     const listLength = useRef()
+    
     const [amount, setAmount] = useState('')
     const [description, setDescription] = useState('')
     const [clickedOption, setClickedOption] = useState(false)
